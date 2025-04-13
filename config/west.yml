@@ -15,7 +15,7 @@ manifest:
     - name: zmk-config-roBa
       remote: kumamuk-git
       revision: main
-      path: config/boards/shields/Test
+      path: config/boards/shields
       # sha: latest  # shaの行を削除または動的に設定する
   self:
     path: config
