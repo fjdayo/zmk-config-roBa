@@ -16,6 +16,6 @@ manifest:
       remote: kumamuk-git
       revision: main
       path: config/boards/shields/Test
-      sha: latest
+      # sha: latest  # shaの行を削除または動的に設定する
   self:
     path: config
