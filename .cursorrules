@@ -1,5 +1,44 @@
 # Cursor Rules for roBa Keyboard Configuration
 
+## Reference Documentation
+
+### Always refer to official ZMK documentation and resources
+
+#### Primary ZMK Resources
+- **Official Repository**: https://github.com/zmkfirmware/zmk
+- **Official Website**: https://zmk.dev/
+- **Community**: ZMK Discord Server
+- **License**: MIT (Open Source)
+- **Base Technology**: Zephyr™ Real Time Operating System
+
+#### When to reference ZMK official resources:
+
+1. **Keymap Configuration**:
+   - Check latest ZMK features and behaviors
+   - Verify correct syntax and parameters
+   - Reference official examples and best practices
+
+2. **Hardware Integration**:
+   - Confirm supported sensors and peripherals
+   - Verify pin assignments and communication protocols
+   - Check device tree configurations
+
+3. **Troubleshooting**:
+   - Reference official solutions and known issues
+   - Check GitHub Issues with enhancement label
+   - Verify compatibility with latest ZMK version
+
+4. **Feature Implementation**:
+   - Review active development features
+   - Check contributor guidelines and standards
+   - Verify technical specifications
+
+#### Documentation Standards
+- Always cite ZMK official sources when referencing features
+- Include links to relevant ZMK documentation sections
+- Maintain consistency with ZMK terminology and conventions
+- Update references when ZMK releases new versions
+
 ## Auto-Documentation Rules
 
 ### When config files are modified, automatically update documentation
