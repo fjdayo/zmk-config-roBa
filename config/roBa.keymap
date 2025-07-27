@@ -34,6 +34,7 @@
 #define NUM 6
 
 // マウススクロール量の設定（一般的なマウスに近づける）
+
 #define ZMK_MOUSE_DEFAULT_SCRL_VAL 15
 
 &mt {
@@ -95,6 +96,7 @@
             label = "ENCODER_MOUSE_SCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+
             tap-ms = <30>;
         };
     };
@@ -142,10 +144,10 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans       &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB3     &mkp MB2  &lt_to_layer_0 0 INT_MUHENKAN
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &kp LG(TAB)  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                   &trans
+&trans  &trans  &trans  &trans  &trans                         &trans         &trans     &kp LC(A)  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans     &trans         &mkp MB1   &mkp MB3   &mkp MB2   &lt_to_layer_0 0 INT_MUHENKAN
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LC(Z)  &kp LC(LS(Z))  &kp LC(X)  &kp LC(C)  &kp LC(V)  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans     &trans                                          &trans
             >;
         };
 
