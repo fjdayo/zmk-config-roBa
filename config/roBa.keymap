@@ -117,7 +117,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                               &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_mouse_scroll>;
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         layer_1 {
@@ -145,6 +145,8 @@
 &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &kp LS(TAB)     &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &lt 0 LC(A)     &trans                  &trans          &trans                   &trans      &trans      &trans  &trans                          &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
         layer_4 {
