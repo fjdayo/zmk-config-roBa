@@ -1,0 +1,103 @@
+# Cursor Rules for roBa Keyboard Configuration
+
+## Auto-Documentation Rules
+
+### When config files are modified, automatically update documentation
+
+#### File Watch Patterns
+- `config/roBa.keymap` → Update `docs/roBa-keyboard-settings.md`
+- `config/boards/shields/*.overlay` → Update hardware section
+- `config/boards/shields/*.dtsi` → Update hardware section
+- `config/roBa.json` → Update layout section
+
+#### Documentation Update Rules
+
+1. **Keymap Changes** (`config/roBa.keymap`):
+   - Extract layer definitions and update layer descriptions
+   - Update special key functions (mt, lt, combos)
+   - Update sensor bindings and behaviors
+   - Refresh key layout diagrams
+
+2. **Hardware Changes** (`*.overlay`, `*.dtsi`):
+   - Update encoder/trackball pin assignments
+   - Update hardware specifications
+   - Update sensor configurations
+
+3. **Layout Changes** (`config/roBa.json`):
+   - Update physical layout information
+   - Update sensor enable/disable status
+
+#### Documentation Sections to Auto-Update
+
+1. **Layer Configuration** section:
+   - Parse bindings and generate key layout tables
+   - Update special functions list
+   - Update layer access methods
+
+2. **Hardware Specifications** section:
+   - Extract pin configurations
+   - Update sensor settings
+   - Update encoder specifications
+
+3. **Change History** section:
+   - Append new changes with timestamp
+   - Categorize changes (keymap, hardware, features)
+
+#### Formatting Rules
+
+- Use Japanese language for all documentation
+- Maintain consistent markdown formatting
+- Use code blocks for key layouts
+- Use tables for specifications
+- Include line numbers for code references
+
+#### Auto-commit Rules
+
+When documentation is auto-updated:
+- Stage documentation changes
+- Create commit with descriptive message in Japanese
+- Include reference to the source file that triggered the update
+
+Example commit message format:
+"ドキュメント自動更新: [変更されたファイル名] の変更を反映"
+
+## Code Analysis Rules
+
+### Always analyze these aspects when reviewing code:
+
+1. **Keymap Structure**:
+   - Layer hierarchy and relationships
+   - Key bindings and their purposes
+   - Combos and macros functionality
+
+2. **Hardware Integration**:
+   - Pin assignments and GPIO usage
+   - Sensor configurations
+   - Communication protocols (SPI, I2C)
+
+3. **ZMK Features**:
+   - Behavior implementations
+   - Custom behaviors and macros
+   - Sensor bindings
+
+### Documentation Quality Standards
+
+- All features must be documented with examples
+- Hardware connections must include pin diagrams
+- User instructions must be step-by-step
+- Troubleshooting sections for common issues
+
+## Language and Style Guide
+
+- Primary language: Japanese
+- Technical terms: Include English in parentheses when first introduced
+- Code comments: English acceptable
+- User-facing documentation: Japanese only
+- Commit messages: Japanese preferred
+
+## File Organization
+
+- Main documentation: `docs/roBa-keyboard-settings.md`
+- Quick reference: `README.md`
+- Configuration files: `config/` directory
+- Auto-generated content: Clearly marked in documentation 
