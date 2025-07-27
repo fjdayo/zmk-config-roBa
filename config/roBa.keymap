@@ -145,8 +145,6 @@
 &kp LEFT_SHIFT  &kp LG(LS(LEFT_ARROW))  &kp LS(TAB)     &kp LG(LS(RIGHT_ARROW))  &trans      &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &lt 0 LC(A)     &trans                  &trans          &trans                   &trans      &trans      &trans  &trans                          &trans
             >;
-
-            sensor-bindings = <&encoder_mouse_scroll>;
         };
 
         layer_4 {
