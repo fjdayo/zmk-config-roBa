@@ -18,9 +18,6 @@
     trackball_listener {
         compatible = "zmk,input-listener";
         device = <&trackball>;
-        xy-swap;
-        x-invert;
-        y-invert;
     };
 };
 
@@ -60,8 +57,11 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         automouse-layer = <4>;
-        automouse-timeout-ms = <600>;
+        automouse-timeout-ms = <1000>;
         scroll-layers = <5>;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
