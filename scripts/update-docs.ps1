@@ -140,7 +140,7 @@ function Commit-And-Push-Changes {
 try {
     # Check if config files exist
     if (-not (Test-Path $KeymapPath)) {
-        Write-Error "キーマップファイルが見つかりません: $KeymapPath"
+        Write-Error "Keymap file not found: $KeymapPath"
         exit 1
     }
     
@@ -160,6 +160,6 @@ try {
     
 }
 catch {
-    Write-Error "エラーが発生しました: $($_.Exception.Message)"
+    Write-Error "Error occurred: $($_.Exception.Message)"
     exit 1
 } 
