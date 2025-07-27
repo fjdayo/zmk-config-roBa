@@ -113,7 +113,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                               &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_mouse_scroll>;
+            sensor-bindings = <&encoder_page_scroll>;
         };
 
         layer_1 {
