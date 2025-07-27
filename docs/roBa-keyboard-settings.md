@@ -148,7 +148,7 @@ roBaは分割型40%キーボードで、ZMKファームウェアを使用して�
 **詳細キー配置:**
 ```
 行1: trans    trans     trans     trans     trans                          上スクロール  上スクロール  上スクロール  上スクロール  上スクロール
-行2: trans    trans     trans     trans     trans     trans   trans       左スクロール  PgUp         ↑           PgDn         右スクロール
+行2: trans    trans     trans     trans     trans     trans   trans       左スクロール  PAGE_UP      ↑           PAGE_DOWN    右スクロール
 行3: trans    trans     trans     trans     trans     trans   trans       左スクロール  ←           ↓            →           右スクロール
 行4: Ctrl+A/0 trans     trans     trans     trans     trans   trans       下スクロール                                          下スクロール
 ```
@@ -160,8 +160,8 @@ roBaは分割型40%キーボードで、ZMKファームウェアを使用して�
   - 左スクロール（`C_AC_SCROLL_LEFT`）
   - 右スクロール（`C_AC_SCROLL_RIGHT`）
 - **ページ移動**:
-  - `PgUp` - ページアップ
-  - `PgDn` - ページダウン
+  - `PAGE_UP` - ページアップ
+  - `PAGE_DOWN` - ページダウン
 - **矢印キー**: 精密なカーソル移動用
 
 #### レイヤー6: System/Bluetooth（システム・Bluetooth）
