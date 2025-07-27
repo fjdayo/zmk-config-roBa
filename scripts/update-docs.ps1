@@ -3,7 +3,8 @@
 
 param(
     [string]$ConfigFile,
-    [switch]$Force
+    [switch]$Force,
+    [switch]$AutoPush
 )
 
 # Set encoding to UTF-8
@@ -104,20 +105,34 @@ function Update-Documentation {
     Write-Host "ドキュメント更新完了: $DocsPath" -ForegroundColor Green
 }
 
-# Function to commit changes
-function Commit-Changes {
-    param([string]$ChangedFile)
+# Function to commit and push changes
+function Commit-And-Push-Changes {
+    param(
+        [string]$ChangedFile,
+        [bool]$ShouldPush = $false
+    )
     
     $fileName = Split-Path $ChangedFile -Leaf
     $commitMessage = "ドキュメント自動更新: $fileName の変更を反映"
     
     try {
+        # Add and commit
         git add $DocsPath
         git commit -m $commitMessage
         Write-Host "変更をコミットしました: $commitMessage" -ForegroundColor Green
+        
+        # Push if requested
+        if ($ShouldPush) {
+            Write-Host "GitHubにプッシュ中..." -ForegroundColor Yellow
+            git push origin main
+            Write-Host "プッシュが完了しました。" -ForegroundColor Green
+        }
+        else {
+            Write-Host "プッシュするには -AutoPush オプションを使用してください。" -ForegroundColor Cyan
+        }
     }
     catch {
-        Write-Warning "コミットに失敗しました: $($_.Exception.Message)"
+        Write-Warning "Git操作に失敗しました: $($_.Exception.Message)"
     }
 }
 
@@ -136,9 +151,9 @@ try {
     # Update documentation
     Update-Documentation $layerInfo $hardwareInfo
     
-    # Commit if requested
+    # Commit and push if requested
     if ($ConfigFile) {
-        Commit-Changes $ConfigFile
+        Commit-And-Push-Changes $ConfigFile $AutoPush
     }
     
     Write-Host "ドキュメント更新処理が完了しました。" -ForegroundColor Green

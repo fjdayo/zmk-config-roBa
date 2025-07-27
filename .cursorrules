@@ -57,9 +57,18 @@ When documentation is auto-updated:
 - Stage documentation changes
 - Create commit with descriptive message in Japanese
 - Include reference to the source file that triggered the update
+- Auto-push to GitHub repository (when enabled)
 
 Example commit message format:
 "ドキュメント自動更新: [変更されたファイル名] の変更を反映"
+
+#### Auto-push Rules
+
+For automated workflow:
+- Use PowerShell script with -AutoPush flag
+- Verify Git authentication before pushing
+- Handle push failures gracefully
+- Notify user of push status
 
 ## Code Analysis Rules
 

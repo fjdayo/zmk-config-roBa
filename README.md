@@ -28,6 +28,12 @@ ZMKファームウェアを使用した分割型40%キーボードの設定リ�
 
 # 特定のファイル変更を反映してコミット
 .\scripts\update-docs.ps1 -ConfigFile "config\roBa.keymap"
+
+# 自動プッシュ付きでコミット
+.\scripts\update-docs.ps1 -ConfigFile "config\roBa.keymap" -AutoPush
+
+# 強制更新（すべてのファイルを確認）
+.\scripts\update-docs.ps1 -Force -AutoPush
 ```
 
 ---
