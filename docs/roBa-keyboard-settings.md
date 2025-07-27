@@ -240,22 +240,18 @@ OS設定を日本語キーボードのまま使用するための変換定義が
 
 ### エンコーダー・マウス機能
 
-#### 左手側エンコーダー（ページ送り・タブ切替）
-- **機能**: ページ送り・タブ切替
+#### 左手側エンコーダー（マウススクロール）
+- **機能**: 縦スクロール
 - **操作**: 
-  - **デフォルトレイヤー**: 
-    - 時計回り → Page Down（`PAGE_DOWN`）
-    - 反時計回り → Page Up（`PG_UP`）
-  - **レイヤー3（矢印・ナビゲーション）**:
-    - 時計回り → Ctrl+Page Down（`LC(PAGE_DOWN)`）- 次のタブ
-    - 反時計回り → Ctrl+Page Up（`LC(PAGE_UP)`）- 前のタブ
+  - 時計回り → 下スクロール（`&msc SCRL_DOWN`）
+  - 反時計回り → 上スクロール（`&msc SCRL_UP`）
 - **接続ピン**: 
   - A相: `xiao_d 5`
   - B相: `xiao_d 0`
 - **ステップ数**: 24（1回転あたり）
-- **センサーバインディング**: 
-  - デフォルト: `sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>`
-  - レイヤー3: `sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>`
+- **スクロール感度**: 一般的なマウスと同等
+- **応答時間**: 30ms（`tap-ms = <30>`）
+- **センサーバインディング**: `sensor-bindings = <&encoder_mouse_scroll>`（全レイヤーで有効）
 
 #### 右手側トラックボール
 - **センサー**: PixArt PMW3610

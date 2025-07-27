@@ -117,7 +117,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                               &kp DELETE
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+            sensor-bindings = <&encoder_mouse_scroll>;
         };
 
         layer_1 {
@@ -146,7 +146,7 @@
 &lt 0 LC(A)     &trans                  &trans          &trans                   &trans      &trans      &trans  &trans                          &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
+            sensor-bindings = <&encoder_mouse_scroll>;
         };
 
         layer_4 {
