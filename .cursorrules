@@ -143,6 +143,98 @@ For automated workflow:
 - User-facing documentation: Japanese only
 - Commit messages: Japanese preferred
 
+## Trackball Auto-Layer Configuration Logic
+
+### Critical Settings for PMW3610 Trackball Auto-Layer Switching
+
+The trackball auto-layer switching requires **THREE LEVELS** of configuration:
+
+#### 1. Hardware Level (Overlay Files)
+- **File**: `config/boards/shields/roBa_R.overlay`
+- **Setting**: `automouse-layer = <4>;` in trackball node
+- **Purpose**: Hardware-level sensor configuration
+
+#### 2. Keymap Level (Behavior Override)
+- **File**: `config/roBa.keymap`
+- **Setting**: 
+```dts
+&trackball {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
+};
+```
+- **Purpose**: ZMK behavior override for trackball
+- **CRITICAL**: This overrides hardware settings and is required for functionality
+
+#### 3. Feature Enable Level (Config Files)
+- **Files**: `config/boards/shields/roBa_L.conf` and `config/boards/shields/roBa_R.conf`
+- **Setting**: `CONFIG_ZMK_POINTING=y`
+- **Purpose**: Enable ZMK pointing device features
+
+### Troubleshooting Auto-Layer Issues
+
+If trackball auto-layer switching fails:
+
+1. **Check all three levels** are properly configured
+2. **Verify keymap override** - this is the most commonly missing setting
+3. **Confirm CONFIG_ZMK_POINTING=y** on both sides
+4. **Reference upstream commits** like `b273da3` where automouse config moved to keymap
+
+### Common Failure Patterns
+
+#### Pattern 1: Missing Keymap Override
+- **Symptom**: Trackball movement detected but no layer switching
+- **Solution**: Add `&trackball { automouse-layer = <4>; };` to keymap
+- **Root Cause**: Hardware config alone is insufficient
+
+#### Pattern 2: Missing CONFIG_ZMK_POINTING
+- **Symptom**: Complete failure of pointing device features
+- **Solution**: Add `CONFIG_ZMK_POINTING=y` to both L and R conf files
+- **Root Cause**: ZMK pointing features not enabled
+
+#### Pattern 3: Configuration Mismatch
+- **Symptom**: Inconsistent behavior or build errors
+- **Solution**: Ensure layer numbers match across overlay and keymap
+- **Root Cause**: Conflicting layer definitions
+
+### Verified Working Configuration
+
+Based on successful resolution (commit 50bef21):
+
+#### Overlay (roBa_R.overlay):
+```dts
+trackball: trackball@0 {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
+};
+```
+
+#### Keymap (roBa.keymap):
+```dts
+&trackball {
+    automouse-layer = <4>;
+    scroll-layers = <5>;
+};
+```
+
+#### Config (both roBa_L.conf and roBa_R.conf):
+```conf
+CONFIG_ZMK_POINTING=y
+```
+
+#### Additional PMW3610 Settings (roBa_R.conf):
+```conf
+CONFIG_PMW3610_AUTOMOUSE_TIMEOUT_MS=700
+CONFIG_PMW3610_MOVEMENT_THRESHOLD=0
+```
+
+### Historical Context
+
+- **Original Issue**: Settings were split between overlay and keymap
+- **Solution Source**: upstream/main commit `b273da3` moved automouse config to keymap
+- **Key Learning**: PMW3610 requires both hardware definition AND keymap behavior override
+- **Resolution**: Three-level configuration approach successfully implemented
+
 ## File Organization
 
 - Main documentation: `docs/roBa-keyboard-settings.md`
