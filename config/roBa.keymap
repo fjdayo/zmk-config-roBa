@@ -33,6 +33,9 @@
 #define SCROLL 5
 #define NUM 6
 
+// マウススクロール量の設定（一般的なマウスに近づける）
+#define ZMK_MOUSE_DEFAULT_SCRL_VAL 15
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -92,7 +95,7 @@
             label = "ENCODER_MOUSE_SCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            tap-ms = <20>;
+            tap-ms = <30>;
         };
     };
 
