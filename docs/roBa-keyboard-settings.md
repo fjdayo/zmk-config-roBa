@@ -32,97 +32,157 @@ roBaは分割型40%キーボードで、ZMKファームウェアを使用して�
 - 日本語入力切替対応
 - モディファイヤーキーとのコンビネーション
 
-**主要キー配置:**
+**詳細キー配置:**
 ```
-Q    W    E    R    T                Y    U    I    O    P
-A    S    D    F    G    [SS]   [-]   H    J    K    L    '
-Z    X    C    V    B    [:]    [;]   N    M    ,    .    /
-Ctrl Win  Alt  [変換] [SP]  [無変換]  [BS] [ENT]           Del
+行1: ESC/Q    W         E         R         T                              Y         U         I         O         BS/P
+行2: A        S         D         F         G         [SS]        [-]       H         J         K         L         '
+行3: Shift/Z  X         C         V         B         [:]         [;]       N         M         ,         .5/       /
+行4: Ctrl     Win       Alt       変換/6    Space/2   無変換/3             BS        Enter/1                       Del
 ```
 
-**特殊機能:**
-- `Q`: 長押しでESC（`ESCAPE`）
-- `P`: 長押しでBackspace
-- `I`: 通常の`I`キー（レイヤー切替なし）
-- `.`: 長押しでレイヤー5（スクロール）への一時移行
-- `変換`: レイヤー6への移行
-- `無変換`: レイヤー3（矢印）への移行
-- `SPACE`: レイヤー2（数字）への一時移行
-- `ENTER`: レイヤー1（ファンクション）への一時移行
+**キー詳細説明:**
+- **Q**: タップで`Q`、長押しで`ESC`（`mt ESCAPE Q`）
+- **P**: タップで`P`、長押しで`BACKSPACE`（`mt BACKSPACE P`）
+- **Z**: タップで`Z`、長押しで`LEFT_SHIFT`（`mt LEFT_SHIFT Z`）
+- **'**: シングルクォート（`SQT`）
+- **.**: タップで`.`、長押しでレイヤー5（スクロール）への一時移行（`lt 5 DOT`）
+- **/**: スラッシュ（`SLASH`）
+- **変換**: タップで`INT_HENKAN`、長押しでレイヤー6への一時移行（`lt_to_layer_0 6 INT_HENKAN`）
+- **Space**: タップで`SPACE`、長押しでレイヤー2（数字）への一時移行（`lt 2 SPACE`）
+- **無変換**: タップで`INT_MUHENKAN`、長押しでレイヤー3（矢印）への一時移行（`lt_to_layer_0 3 INT_MUHENKAN`）
+- **Enter**: タップで`ENTER`、長押しでレイヤー1（ファンクション）への一時移行（`lt 1 ENTER`）
+- **特殊キー**:
+  - `[SS]`: `LS(LG(S))` - Shift+Win+S（スクリーンショット）
+  - `[-]`: `MINUS` - マイナス記号
+  - `[:]`: `COLON` - コロン
+  - `[;]`: `SEMICOLON` - セミコロン
 
 #### レイヤー1: FUNCTION（記号・特殊文字）
 記号や特殊文字の入力に使用します。
 
-**キー配置:**
+**詳細キー配置:**
 ```
-    &    *    (    )                (    )                    
-~   $    %    ^              {    }    ;    '    \
-`   !    @    #              [    ]    :    "    |
-                                                     
+行1: trans    &         *         (         )                              (         )         trans     trans     trans
+行2: ~        $         %         ^         trans     trans   trans       {         }         ;         '         \
+行3: `        !         @         #         trans     trans   trans       [         ]         :         "         |
+行4: Ctrl+A/0 trans     trans     trans     trans     trans   trans       trans                                   trans
 ```
+
+**キー詳細説明:**
+- **行1**: アンパサンド（`AMPS`）、アスタリスク（`ASTERISK`）、左右の丸括弧（`LEFT_PARENTHESIS`、`RIGHT_PARENTHESIS`）
+- **行2**: チルダ（`TILDE`）、ドル（`DLLR`）、パーセント（`PRCNT`）、ハット（`CARET`）、左右の波括弧（`LEFT_BRACE`、`RIGHT_BRACE`）、セミコロン（`SEMICOLON`）、シングルクォート（`SQT`）、バックスラッシュ（`NON_US_BACKSLASH`）
+- **行3**: バッククォート（`GRAVE`）、エクスクラメーション（`EXCL`）、アットマーク（`AT`）、ハッシュ（`HASH`）、左右の角括弧（`LEFT_BRACKET`、`RIGHT_BRACKET`）、コロン（`COLON`）、ダブルクォート（`DOUBLE_QUOTES`）、パイプ（`PIPE`）
+- **行4**: `lt 0 LC(A)` - タップでレイヤー0への移行、長押しでCtrl+A（全選択）
 
 #### レイヤー2: NUM（数字・ファンクションキー）
 数字入力とファンクションキーの層です。
 
-**キー配置:**
+**詳細キー配置:**
 ```
-     F7   F8   F9   F10              +    7    8    9    -
-     F4   F5   F6   F11              *    4    5    6    /
-ESC  F1   F2   F3   F12  F13    =    0    1    2    3    .
+行1: trans    F7        F8        F9        F10                            +         7         8         9         -
+行2: trans    F4        F5        F6        F11       trans   trans       *         4         5         6         /
+行3: ESC      F1        F2        F3        F12       F13     =           0         1         2         3         .
+行4: Ctrl+A/0 trans     trans     trans     trans     trans   trans       trans                                   trans
 ```
+
+**キー詳細説明:**
+- **ファンクションキー**: F1〜F13まで配置
+- **数字キー**: 0〜9をテンキー配列で配置
+- **演算子**: `+`（プラス）、`-`（マイナス）、`*`（アスタリスク）、`/`（スラッシュ）、`=`（イコール）、`.`（ピリオド）
+- **ESC**: エスケープキー（左下）
 
 #### レイヤー3: ARROW（矢印・ナビゲーション）
 カーソル移動とナビゲーション機能の層です。
 
-**キー配置:**
+**詳細キー配置:**
 ```
-BS   Ctrl+Shift+Tab  ↑   Ctrl+Tab    Del
-Home      ←         ↓      →        End
-Shift  Cmd+Shift+←  Shift+Tab  Cmd+Shift+→
+行1: BS       Ctrl+Shift+Tab    ↑         Ctrl+Tab         Del
+行2: Home     ←                ↓         →                End       trans   trans
+行3: Shift    Win+Shift+←      Shift+Tab Win+Shift+→      trans     trans   trans
+行4: Ctrl+A/0 trans            trans     trans            trans     trans   trans
 ```
+
+**キー詳細説明:**
+- **矢印キー**: 上下左右の基本移動（`UP_ARROW`、`DOWN_ARROW`、`LEFT_ARROW`、`RIGHT_ARROW`）
+- **ナビゲーション**: 
+  - `Ctrl+Tab` - タブ切替
+  - `Ctrl+Shift+Tab` - 逆タブ切替
+  - `Home` - 行頭移動
+  - `End` - 行末移動
+  - `Shift+Tab` - 逆タブ
+- **テキスト選択**:
+  - `Win+Shift+←` - 単語単位で左選択（`LG(LS(LEFT_ARROW))`）
+  - `Win+Shift+→` - 単語単位で右選択（`LG(LS(RIGHT_ARROW))`）
+- **削除**: `BS`（バックスペース）、`Del`（デリート）
 
 #### レイヤー4: MOUSE（マウス機能）
 マウス操作関連の機能層です。トラックボール移動時に自動的に有効化されます。
 
-**キー配置:**
+**詳細キー配置:**
 ```
-                                    全選択             スクロール切替
-                        左クリック  中クリック  右クリック  [無変換で戻る]
-                  元に戻す  やり直し  切り取り   コピー    貼り付け   スクロール切替
-                                   スクロール切替
+行1: trans    trans     trans     trans     trans                          trans     trans     Ctrl+A    trans     スクロール/5
+行2: trans    trans     trans     trans     trans     trans   trans       trans     左click   中click   右click   無変換で戻る
+行3: trans    trans     trans     trans     trans     trans   Ctrl+Z      Ctrl+Shift+Z Ctrl+X  Ctrl+C    Ctrl+V    スクロール/5
+行4: Ctrl+A/0 trans     trans     trans     trans     trans   trans       スクロール/5                               trans
 ```
 
-**機能:**
-- トラックボールでマウスカーソル移動
-- 左・中・右クリック操作
-- スクロール切替ボタン（複数箇所に配置）
-- 編集操作（元に戻す、コピー、貼り付けなど）
+**キー詳細説明:**
+- **マウスクリック**:
+  - 左クリック（`mkp MB1`）
+  - 中クリック（`mkp MB3`）
+  - 右クリック（`mkp MB2`）
+- **編集操作**:
+  - `Ctrl+A` - 全選択
+  - `Ctrl+Z` - 元に戻す
+  - `Ctrl+Shift+Z` - やり直し（`LC(LS(Z))`）
+  - `Ctrl+X` - 切り取り
+  - `Ctrl+C` - コピー
+  - `Ctrl+V` - 貼り付け
+- **レイヤー切替**:
+  - `スクロール/5` - レイヤー5への一時移行（`mo 5`）
+  - `無変換で戻る` - レイヤー0への移行+無変換キー（`lt_to_layer_0 0 INT_MUHENKAN`）
 
 #### レイヤー5: SCROLL（スクロール）
 トラックボールスクロール機能用の層です。
 
-**キー配置:**
+**詳細キー配置:**
 ```
- 上スクロール   上スクロール   上スクロール   上スクロール   上スクロール
-左スクロール   PageUp        ↑            PageDown      右スクロール
-左スクロール   ←            ↓            →            右スクロール
-下スクロール                                            下スクロール
+行1: trans    trans     trans     trans     trans                          上スクロール  上スクロール  上スクロール  上スクロール  上スクロール
+行2: trans    trans     trans     trans     trans     trans   trans       左スクロール  PgUp         ↑           PgDn         右スクロール
+行3: trans    trans     trans     trans     trans     trans   trans       左スクロール  ←           ↓            →           右スクロール
+行4: Ctrl+A/0 trans     trans     trans     trans     trans   trans       下スクロール                                          下スクロール
 ```
 
-**機能:**
-- トラックボール移動による上下左右スクロール
-- PageUp/PageDown でページ単位移動
-- 矢印キーで行単位移動
+**キー詳細説明:**
+- **スクロール方向**:
+  - 上スクロール（`C_AC_SCROLL_UP`）
+  - 下スクロール（`C_AC_SCROLL_DOWN`）
+  - 左スクロール（`C_AC_SCROLL_LEFT`）
+  - 右スクロール（`C_AC_SCROLL_RIGHT`）
+- **ページ移動**:
+  - `PgUp` - ページアップ
+  - `PgDn` - ページダウン
+- **矢印キー**: 精密なカーソル移動用
 
 #### レイヤー6: System/Bluetooth（システム・Bluetooth）
 システム機能とBluetooth管理の層です。
 
-**キー配置:**
+**詳細キー配置:**
 ```
-            BT1  BT2  BT3  BT4  BT5
-1    2    3              bootloader      BT Clear
-                                         BT Clear All
+行1: trans    trans     trans     trans     trans                          BT1       BT2       BT3       BT4       BT5
+行2: trans    trans     trans     trans     trans     trans   trans       trans     trans     trans     trans     trans
+行3: trans    trans     trans     trans     trans     trans   bootloader  trans     trans     trans     trans     BT Clear
+行4: Ctrl+A/0 trans     trans     trans     trans     trans   trans       trans                                   BT Clear All
 ```
+
+**キー詳細説明:**
+- **Bluetoothプロファイル**:
+  - `BT1`〜`BT5` - デバイス1〜5の選択（`bt BT_SEL 0`〜`bt BT_SEL 4`）
+- **Bluetooth管理**:
+  - `BT Clear` - 選択中プロファイルのクリア（`bt BT_CLR`）
+  - `BT Clear All` - 全プロファイルのクリア（`bt BT_CLR_ALL`）
+- **システム**:
+  - `bootloader` - ブートローダーモードへの移行
 
 ### 日本語キーボード設定
 
@@ -158,27 +218,33 @@ OS設定を日本語キーボードのまま使用するための変換定義が
 
 複数のキーを同時押しすることで特定の機能を実行できます：
 
-| キー位置 | 機能 | 説明 |
-|----------|------|------|
-| 11 + 12 | Tab | タブキー |
-| 12 + 13 | Shift + Tab | 逆タブ |
-| 10 + 11 | 無変換 | 無変換キー（レイヤー0に戻る） |
-| 20 + 21 | " | ダブルクォート |
-| 24 + 25 | = | イコール |
+| キー組み合わせ | キー位置 | 機能 | ZMKコード | 説明 |
+|----------------|----------|------|-----------|------|
+| W + E | 11 + 12 | Tab | `&kp TAB` | タブキー |
+| E + R | 12 + 13 | Shift + Tab | `&kp LS(TAB)` | 逆タブ（シフトタブ） |
+| S + W | 10 + 11 | 無変換 | `&to_layer_0 INT_MUHENKAN` | 無変換キー（レイヤー0に戻る+無変換） |
+| S + D | 20 + 21 | " | `&kp DOUBLE_QUOTES` | ダブルクォート |
+| M + , | 24 + 25 | = | `&kp EQUAL` | イコール記号 |
+
+**コンボキー詳細:**
+- **タブ機能**: `W + E`で通常のタブ、`E + R`で逆方向タブ
+- **日本語入力**: `S + W`で無変換キーを入力しつつレイヤー0に戻る
+- **記号入力**: よく使用される記号をコンボで素早く入力
 
 ### エンコーダー・マウス機能
 
 #### 左手側エンコーダー（マウススクロール）
 - **機能**: 縦スクロール
 - **操作**: 
-  - 時計回り → 上スクロール
-  - 反時計回り → 下スクロール
+  - 時計回り → 下スクロール（`&msc SCRL_DOWN`）
+  - 反時計回り → 上スクロール（`&msc SCRL_UP`）
 - **接続ピン**: 
   - A相: `xiao_d 5`
   - B相: `xiao_d 0`
 - **ステップ数**: 24（1回転あたり）
 - **スクロール感度**: 一般的なマウスと同等
-- **応答時間**: 30ms
+- **応答時間**: 30ms（`tap-ms = <30>`）
+- **センサーバインディング**: `sensor-bindings = <&encoder_mouse_scroll>`（デフォルトレイヤーで有効）
 
 #### 右手側トラックボール
 - **センサー**: PixArt PMW3610
@@ -297,9 +363,16 @@ OS設定を日本語キーボードのまま使用するための変換定義が
 - GitHubへのプッシュで自動的にZMKファームウェアビルドが実行
 - 生成されたファームウェアはGitHub Actionsからダウンロード可能
 
-このドキュメントは設定の変更に伴って更新されます。
+このドキュメントは設定の変更に伴って自動更新されます。
 
 ## 変更履歴
+
+### 2024年12月 - ドキュメント詳細化
+- **keymap-editor画面対応**: すべてのキー割り当てを詳細に記述
+- **レイヤー別キー配置**: 各レイヤーの全キー位置と機能を明確化
+- **コンボキー詳細**: キー組み合わせとZMKコードを明記
+- **センサーバインディング**: エンコーダーの詳細な動作仕様を追加
+- **キー機能説明**: タップ/長押し、Layer Tap機能の詳細を記載
 
 ### 最新の変更点
 
