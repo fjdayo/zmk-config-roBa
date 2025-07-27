@@ -91,6 +91,17 @@ if ($pushResult -eq "success") {
     if ($localCommit -eq $finalRemoteCommit) {
         Write-Host "SUCCESS: Push verified - local and remote are synchronized!" -ForegroundColor Green
         Write-Host "Latest commit: $localCommit" -ForegroundColor Blue
+        
+        # Run detailed verification
+        Write-Host "`nRunning detailed verification..." -ForegroundColor Cyan
+        $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+        $verifyScript = Join-Path $scriptDir "verify-push.ps1"
+        
+        if (Test-Path $verifyScript) {
+            & PowerShell -ExecutionPolicy Bypass -File $verifyScript
+        } else {
+            Write-Host "Note: Detailed verification script not found" -ForegroundColor Yellow
+        }
     } else {
         Write-Host "WARNING: Push succeeded but verification failed" -ForegroundColor Yellow
     }
