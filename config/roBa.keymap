@@ -154,7 +154,7 @@
         SCROLL {
             bindings = <
 &trans       &trans  &trans  &trans  &trans                      &kp C_AC_SCROLL_UP    &kp C_AC_SCROLL_UP    &kp C_AC_SCROLL_UP    &kp C_AC_SCROLL_UP    &kp C_AC_SCROLL_UP
-&trans       &trans  &trans  &trans  &trans  &trans      &trans  &kp C_AC_SCROLL_LEFT  &kp PG_UP             &kp UP                &kp PG_DN             &kp C_AC_SCROLL_RIGHT
+&trans       &trans  &trans  &trans  &trans  &trans      &trans  &kp C_AC_SCROLL_LEFT  &kp PAGE_UP           &kp UP                &kp PAGE_DOWN         &kp C_AC_SCROLL_RIGHT
 &trans       &trans  &trans  &trans  &trans  &trans      &trans  &kp C_AC_SCROLL_LEFT  &kp LEFT              &kp DOWN              &kp RIGHT             &kp C_AC_SCROLL_RIGHT
 &lt 0 LC(A)  &trans  &trans  &trans  &trans  &trans      &trans  &kp C_AC_SCROLL_DOWN                                              &kp C_AC_SCROLL_DOWN
             >;
