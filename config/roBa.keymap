@@ -29,12 +29,9 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
-
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
-
-
 
 &mt {
     flavor = "balanced";
@@ -111,12 +108,12 @@
         default_layer {
             bindings = <
 &mt ESCAPE Q      &kp W         &kp E         &kp R                        &kp T                                                          &kp Y        &kp U  &kp I      &kp O      &mt BACKSPACE P
-&kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L      &lt 4 JP_COLON
+&kp A             &kp S         &kp D         &kp F                        &kp G        &kp LS(LG(S))                      &kp MINUS      &kp H        &kp J  &kp K      &kp L      &lt 5 JP_COLON
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V                        &kp B        &kp AT_SIGN                        &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &lt 5 DOT  &kp SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                               &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_page_scroll>;
+            sensor-bindings = <&encoder_mouse_scroll>;
         };
 
         layer_1 {
