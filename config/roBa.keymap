@@ -101,8 +101,10 @@
             label = "ENCODER_MOUSE_SCROLL";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            // 代替案: もし問題が続く場合は以下に変更
+            // bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
-            tap-ms = <30>;
+            tap-ms = <100>;
         };
     };
 
