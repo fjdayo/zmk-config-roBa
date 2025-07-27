@@ -62,4 +62,36 @@
     };
 };
 
+// #includeのあとのあたりにスクロール量変更の定義を追記
 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80
+
+// combosやmacrosと同じ階層に以下のbihaviorsを追記
+// スクロール方向を逆にしたい場合は <&msc SCRL_DOWN> と <&msc SCRL_UP> を入れ替えてください
+
+    behaviors {
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
+            tap-ms = <20>;
+        };
+
+// 設定したいレイヤーに sensor-bindings = <&encoder_msc_down_up>; を追記
+// 以下は実際にレイヤー０に追記した例
+
+    keymap {
+        compatible = "zmk,keymap";
+
+            L0 {
+                    bindings = <
+&kp Q           &kp L         &kp U         &kp COMMA  &kp EQUAL                                                     &kp F          &kp W  &kp R  &kp Y  &kp P
+&kp E           &kp I         &kp A         &kp O      &kp MINUS             &kp LA(LEFT)                 &mkp MB3   &kp K          &kp T  &kp N  &kp S  &kp H
+&kp J           &kp X         &kp C         &kp V      &kp PERIOD            &mkp MB1                     &mkp MB2   &kp G          &kp D  &kp M  &kp Z  &kp B
+&kp LEFT_SHIFT  &kp LEFT_WIN  &kp LEFT_ALT  &mo 1      &mt LEFT_SHIFT SPACE  &mt RIGHT_CONTROL SPACE      &lt 2 TAB  &kp BACKSPACE                       &kp RS(RIGHT_CONTROL)
+                    >;
+
+                    sensor-bindings = <&encoder_msc_down_up>;
+            };
+    };
