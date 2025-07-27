@@ -96,7 +96,7 @@
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_PAGE_SCROLL";
             #sensor-binding-cells = <0>;
-            bindings = <&kp PAGE_DOWN>, <&kp PAGE_UP>;
+            bindings = <&kp PAGE_UP>, <&kp PAGE_DOWN>;
 
             tap-ms = <100>;
         };
