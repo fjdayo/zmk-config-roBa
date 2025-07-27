@@ -29,13 +29,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+
 #define MOUSE 4
 #define SCROLL 5
 #define NUM 6
 
-// マウススクロール量の設定（一般的なマウスに近づける）
 
-#define ZMK_MOUSE_DEFAULT_SCRL_VAL 15
 
 &mt {
     flavor = "balanced";
@@ -96,13 +95,11 @@
             tapping-term-ms = <200>;
         };
 
-        encoder_mouse_scroll: encoder_mouse_scroll {
+        encoder_page_scroll: encoder_page_scroll {
             compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MOUSE_SCROLL";
+            label = "ENCODER_PAGE_SCROLL";
             #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-            // 代替案: もし問題が続く場合は以下に変更
-            // bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+            bindings = <&kp PAGE_DOWN>, <&kp PAGE_UP>;
 
             tap-ms = <100>;
         };
@@ -119,7 +116,7 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &lt 2 SPACE  &lt_to_layer_0 3 INT_MUHENKAN      &kp BACKSPACE  &lt 1 ENTER                               &kp DELETE
             >;
 
-            sensor-bindings = <&encoder_mouse_scroll>;
+            sensor-bindings = <&encoder_page_scroll>;
         };
 
         layer_1 {
